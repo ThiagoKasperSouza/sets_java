@@ -1,8 +1,8 @@
-package main.java.sets.br.com.aulas.users;
+package sets.br.com.aulas.users;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable<User>{
     private int id;
     private String name;
 
@@ -30,5 +30,18 @@ public class User {
         if(Objects.isNull(obj) || (!(obj instanceof User))) return false;
         User user = (User) obj;
         return this.id == user.getId() && Objects.equals(this.name,user.getName());
+    }
+
+    @Override 
+    public  int hashCode() {
+        return Objects.hash(this.id, this.name);
+    }
+
+    @Override 
+    public int compareTo(User u) {
+        var compareResult = 0;
+        if(this.id > u.id) compareResult ++;
+        if(this.id < u.id) compareResult --;
+        return compareResult;
     }
 }

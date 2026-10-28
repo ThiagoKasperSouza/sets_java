@@ -6,8 +6,10 @@ package sets;
 import java.util.HashSet;
 import java.util.Set;
 
-import main.java.sets.br.com.aulas.Aula;
-import main.java.sets.br.com.aulas.Exercicio1;
+import sets.br.com.aulas.Aula;
+import sets.br.com.aulas.Exercicio1;
+import sets.br.com.aulas.Exercicio2;
+import sets.br.com.aulas.Exercicio3;
 
 public class App {
 
@@ -15,6 +17,8 @@ public class App {
         System.out.println("Sets");
         Set<Aula> aulas = new HashSet<>();
         aulas.add(new Exercicio1());
+        aulas.add(new Exercicio2());
+        aulas.add(new Exercicio3());
 
         aulas.forEach(Aula::exibir);
     }
